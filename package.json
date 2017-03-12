@@ -1,0 +1,20 @@
+{
+  "name": "basic-config",
+  "description": "A global config storage for basic application values that can accessed across the app.",
+  "version": "0.0.1",
+  "author": "Hector Larios <hectorslarios@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/hectorlarios/basic-config.git",
+  "keywords": [
+    "node",
+    "react",
+    "basic",
+    "config"
+  ],
+  "main": "src/BasicConfig.js",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "src/"
+  ]
+}
