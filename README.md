@@ -8,18 +8,18 @@ stored value.
 
 ## Installation
 ``
-$ npm install basic-config
+$ npm install basic-config-store
 ``
 
 ## API
 ```
-import { setConfigProperty } from 'basic-config';
+import { setConfigProperty } from 'basic-config-store';
 
 setConfigProperty('hello.world','hello world');
 
 ---
 
-import { getConfigProperty } from 'basic-config';
+import { getConfigProperty } from 'basic-config-store';
 
 const hw = getConfigProperty('hello.world');
 
@@ -66,7 +66,7 @@ that do not need to be stored in the global space.
 
 ### Example
 ```
-import { setConfigProperty, getConfigProperty } from 'basic-config';
+import { setConfigProperty, getConfigProperty } from 'basic-config-store';
 
 let hw = getConfigProperty('hello.world');
 
@@ -81,7 +81,7 @@ console.info(hw); //hello world
 
 ### Example
 ```
-import { setConfigProperty, observeConfig, unobserveConfig } from 'basic-config';
+import { setConfigProperty, observeConfig, unobserveConfig } from 'basic-config-store';
 
 class Observer
 {
@@ -108,7 +108,7 @@ setConfigProperty('http.response.abc123', {status: 'success', resonse: {}});
 
 ### Example
 ```
-import { createConfig, setConfigProperty } from 'basic-config';
+import { createConfig, setConfigProperty } from 'basic-config-store';
 
 const local = createBasicConfig();
 
