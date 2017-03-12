@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * basic-config
+ * basic-config-store
  * Copyright(c) 2017 Hector Larios
  * MIT Licensed
  */
@@ -21,7 +21,7 @@ function BasicConfigStore()
    * Returns the name of the property to be modified after splitting the path parameter into an array. The last
    * item in the array is the value returned .
    *
-   * @param {String} path - the path to the property to be modified.
+   * @param path {String} - the path to the property to be modified.
    * @returns {String} - the name of the property to be modified.
    */
   function getPropertyName(path)
@@ -44,20 +44,20 @@ function BasicConfigStore()
    * Returns the object that contains the property to be modified. The path parameter is split into an array; the, newly
    * created, array is used for finding the object contains the property. If the object does not exist, it will be created.
    *
-   * @param {String} path - the path to the object containing the property that will be modified.
+   * @param path {String} - the path to the object containing the property that will be modified.
    * @returns {Object} - the object that has the property to be modified.
    */
   function getParentObject(path)
   {
     var _match = path.match(_pattern);
 
+    var _obj = _data;
+
     if (_match)
     {
       var _path = path.split(_separator);
 
       var lastIndex = _path.length - 1;
-
-      var _obj = _data;
 
       _path.every(function (name, index)
       {
@@ -67,7 +67,7 @@ function BasicConfigStore()
       });
     }
 
-    return _data;
+    return _obj;
   }
 
   /**
@@ -116,8 +116,8 @@ function BasicConfigStore()
    * This method checks if any observer(s) exist for property that was updated. If there are any observers, the observer's
    * handler is called passing the property and its new value.
    *
-   * @param property - string path of the property that was modified.
-   * @param value - the new value of the property.
+   * @param property {String} - string path of the property that was modified.
+   * @param value {*} - the new value of the property.
    */
   function notify(property, value)
   {
@@ -179,7 +179,7 @@ function BasicConfigStore()
   /**
    * Returns the value of the property in the config object.
    *
-   * @param property - string path of the property to look up.
+   * @param property {String} - string path of the property to look up.
    * @returns {*} - the value of the property
    */
   this.getConfigProperty = function getConfigProperty(property)
@@ -215,10 +215,10 @@ function BasicConfigStore()
  *
  * @returns {BasicConfigStore} - new instance of BasicConfigStore
  */
-BasicConfigStore.createConfig = function createBasicConfig()
+function createConfig()
 {
   return new BasicConfigStore();
-};
+}
 
 /**
  * Creates a random string that is generated using the Math.random method,
@@ -258,6 +258,6 @@ module.exports = {
 
   setConfigProperty: global.setConfigProperty,
 
-  createConfig: BasicConfigStore.createConfig
+  createConfig: createConfig
 
 };
