@@ -1,4 +1,4 @@
-# basic-config
+# basic-config-store
 
 A global config storage for basic application values that can accessed across the app. The `setConfigProperty` and 
 `getConfigProperty` methods provide read/write access of any properties currently in the global config storage. An 
@@ -26,7 +26,7 @@ const hw = getConfigProperty('hello.world');
 console.info(hw); //hello world
 ```
 
-### BasicConfig
+### BasicConfigStore
 The BasicConfig class cannot be instantiated directly, the methods: `createBasicConfig()` 
 will return a new instance of the BasicConfig class.
 
@@ -60,8 +60,8 @@ Unregisters an observer and its method that is currently observing the property 
 
 `property {String}` - string path to the property that will be unobserved. e.g. 'path.to.the.property.to.be.unobserved'
 
-### createBasicConfig()
-This method will create a new instance of the BasicConfig class. The new instance will provide local storage of properties 
+### createConfig()
+This method will create a new instance of the BasicConfigStore class. The new instance will provide local storage of properties 
 that do not need to be stored in the global space.
 
 ### Example
@@ -108,7 +108,7 @@ setConfigProperty('http.response.abc123', {status: 'success', resonse: {}});
 
 ### Example
 ```
-import { createBasicConfig, setConfigProperty } from 'basic-config';
+import { createConfig, setConfigProperty } from 'basic-config';
 
 const local = createBasicConfig();
 

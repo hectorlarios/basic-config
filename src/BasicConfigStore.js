@@ -5,7 +5,7 @@
  * Copyright(c) 2017 Hector Larios
  * MIT Licensed
  */
-function BasicConfig()
+function BasicConfigStore()
 {
   var _data = {};
 
@@ -210,14 +210,14 @@ function BasicConfig()
 }
 
 /**
- * Returns an new instance of BasicConfig. The new instance can be used to manage different config values that do not need
+ * Returns an new instance of BasicConfigStore. The new instance can be used to manage different config values that do not need
  * to be in the global space.
  *
- * @returns {BasicConfig} - new instance of BasicConfig
+ * @returns {BasicConfigStore} - new instance of BasicConfigStore
  */
-BasicConfig.createBasicConfig = function createBasicConfig()
+BasicConfigStore.createConfig = function createBasicConfig()
 {
-  return new BasicConfig();
+  return new BasicConfigStore();
 };
 
 /**
@@ -246,7 +246,7 @@ function createRandomString()
   return _value.toUpperCase();
 }
 
-var global = new BasicConfig();
+var global = new BasicConfigStore();
 
 module.exports = {
 
@@ -258,6 +258,6 @@ module.exports = {
 
   setConfigProperty: global.setConfigProperty,
 
-  createBasicConfig: BasicConfig.createBasicConfig
+  createConfig: BasicConfigStore.createConfig
 
 };
