@@ -1,7 +1,7 @@
 {
   "name": "basic-config-store",
   "description": "A global config storage for basic application values that can accessed across the app.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Hector Larios <hectorslarios@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/hectorlarios/basic-config-store.git",
@@ -12,7 +12,7 @@
     "config",
     "store"
   ],
-  "main": "src/BasicConfigConfig.js",
+  "main": "src/BasicConfigStore.js",
   "files": [
     "LICENSE",
     "README.md",
