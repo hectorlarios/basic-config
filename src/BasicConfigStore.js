@@ -13,7 +13,7 @@ function BasicConfigStore()
 
   var _separator = '.';
 
-  var _pattern = new RegExp('/\\./');
+  var _pattern = /\./;
 
   var _id = createRandomString();
 
