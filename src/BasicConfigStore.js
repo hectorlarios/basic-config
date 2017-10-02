@@ -172,7 +172,7 @@ function BasicConfigStore()
     {
       _list.splice(_index, 1);
 
-      setObserverIndex(observer, property, null);
+      setObserverIndex(observer, property, NaN);
     }
   };
 
